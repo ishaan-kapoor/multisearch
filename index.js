@@ -9,6 +9,11 @@ document.querySelector('.search_input').addEventListener('keyup', e => {
         case 'drive':
         case 'slides':
         case 'sheets':
+        case 'github':
+        case 'stackoverflow':
+        case 'reddit':
+        case 'archlinux':
+        case 'spotify':
         case 'docs': break;
         default: search_engine = 'google';
         search_query = input;
@@ -16,7 +21,7 @@ document.querySelector('.search_input').addEventListener('keyup', e => {
     if(search_engine !== current_search) {
         current_search = search_engine;
         const image = document.querySelector('.search_icon');
-        switch(search_engine){
+        switch(search_engine) {
             case 'google':
                 image.src = 'google.png';
                 image.alt = 'Google icon';
@@ -41,6 +46,26 @@ document.querySelector('.search_input').addEventListener('keyup', e => {
                 image.src = 'sheets.png';
                 image.alt = 'Google Sheets icon';
                 break;
+            case 'github':
+                image.src = 'github.png';
+                image.alt = 'Github icon';
+                break;
+            case 'stackoverflow':
+                image.src = 'stackoverflow.png';
+                image.alt = 'Stackoverflow icon';
+                break;
+            case 'reddit':
+                image.src = 'reddit.png';
+                image.alt = 'Reddit icon';
+                break;
+            case 'archlinux':
+                image.src = 'archlinux.png';
+                image.alt = 'Archlinux icon';
+                break;
+            case 'spotify':
+                image.src = 'spotify.png';
+                image.alt = 'Spotify icon';
+                break;
         }
     }
     if(e.key === 'Enter') {
@@ -60,6 +85,21 @@ document.querySelector('.search_input').addEventListener('keyup', e => {
                 break;
             case 'sheets':
                 search_engine_url = `https://docs.google.com/spreadsheets/?q=`;
+                break;
+            case 'github':
+                search_engine_url = `https://github.com/search?ref=opensearch&q=`;
+                break;
+            case 'stackoverflow':
+                search_engine_url = `https://stackoverflow.com/search?q=`;
+                break;
+            case 'reddit':
+                search_engine_url = `https://www.reddit.com/search/?q=`;
+                break;
+            case 'archlinux':
+                search_engine_url = `https://archlinux.org/packages/?q=`;
+                break;
+            case 'spotify':
+                search_engine_url = `https://open.spotify.com/search/`;
                 break;
             default: 
                 search_engine_url = `https://www.google.com/search?q=`;
